@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT PRODUCT</title>
+</head>
+<body align="center">
+<h1>EDIT PRODUCT</h1>
+<form  th:action="@{/product/products/edit/{id}(id=${productToUpdate.getId()})}" method="post">
+    <h5>Name:</h5>
+    <label>
+        <input name="name" th:value="${productToUpdate.getName()}">
+    </label> <br/>
+    <h5>Price:</h5>
+    <label>
+        <input name="price" th:value="${productToUpdate.getPrice()}">
+    </label> <br/>
+    <h5>Category:</h5>
+    <label>
+        <input name="category" th:value="${productToUpdate.getCategory().getId()}">
+    </label> <br/>
+
+
+    <input style="margin-top: 30px" type="submit" value="Edit Product">
+</form>
+</body>
+</html>
